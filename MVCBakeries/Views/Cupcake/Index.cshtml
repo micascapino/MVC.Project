@@ -1,0 +1,59 @@
+﻿@model IEnumerable<MVCBakeries.Models.Cupcake>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Nuevo cupcake", "Create")
+</p>
+<table class="table table-secondary table-striped">
+    <thead class="thead-info">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CupcakeType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GlutenFree)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BakeryId)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CupcakeType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GlutenFree)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BakeryId)
+                </td>
+                <td>
+                    @Html.ActionLink("Detalles", "Details", new { id = item.CupcakeId }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.CupcakeId })
+                </td>
+            </tr>
+        }
+
+</table>

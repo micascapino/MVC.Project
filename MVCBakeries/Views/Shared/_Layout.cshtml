@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - MVC Bakery</title>
+    <link href="~/Content/Styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+    <div id="header">
+        <h2>MVC BAKERIES</h2>
+    </div>
+
+    <div id="navbar">
+        <a>@Html.ActionLink("Ver", "Index", "Bakery")</a>
+        <a>@Html.ActionLink("Nueva bakery", "Create", "Bakery")</a>
+        <a>@Html.ActionLink("Ver cupcakes", "Index", "Cupcake")</a>
+        <a>@Html.ActionLink("Nuevo cupcake", "Create", "Cupcake")</a>
+    </div>
+
+    <div id="content">
+        @RenderBody()
+    </div>
+
+    <div id="footer">
+        <h2>info@bakeries.com</h2>
+    </div>
+</body>
+</html>

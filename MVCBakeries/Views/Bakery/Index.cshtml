@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MVCBakeries.Models.Bakery>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Ver</h2>
+
+<p>
+    @Html.ActionLink("Nueva Bakery", "Create", "Bakery")
+</p>
+<p>
+    @Html.ActionLink("Nuevo Cupcake", "Create", "Cupcake")
+</p>
+<table class="table table-secondary table-striped">
+    <thead class="thead-info">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BakeryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BakeryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+    </tr>
+}
+
+</table>
